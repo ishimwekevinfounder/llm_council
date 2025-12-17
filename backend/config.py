@@ -23,4 +23,9 @@ CHAIRMAN_MODEL = "google/gemini-2.0-flash-exp:free"
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Data directory for conversation storage
-DATA_DIR = "data/conversations"
+# Use /tmp in serverless environments (Vercel), otherwise use local data directory
+import os
+if os.getenv("VERCEL"):
+    DATA_DIR = "/tmp/data/conversations"
+else:
+    DATA_DIR = "data/conversations"

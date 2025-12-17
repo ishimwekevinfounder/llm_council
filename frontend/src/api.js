@@ -2,7 +2,8 @@
  * API client for the LLM Council backend.
  */
 
-const API_BASE = 'http://localhost:8001';
+// Use relative URL for production (Vercel), fallback to localhost for development
+const API_BASE = import.meta.env.PROD ? '/api' : 'http://localhost:8001';
 
 export const api = {
   /**
