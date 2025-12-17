@@ -15,6 +15,5 @@ node_modules/
 data/
 *.lock
 uv.lock
-pyproject.toml
 start.sh
 
